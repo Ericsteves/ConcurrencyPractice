@@ -1,0 +1,2 @@
+1.Adapter为类的适配模式：Adapter实现了目标接口Targetable,继承了源类Source,在不修改Source方法的条件下，实现了Targetable的另一方法。
+2.Wrapper为对象的适配模式：Wrapper实现了目标接口Targetable,同时持有Source对象，并调用Source中的方法作为自己的方法。
