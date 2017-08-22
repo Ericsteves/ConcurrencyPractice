@@ -65,7 +65,7 @@ public class HeapSort {
             largest = right; 
         }
 
-        if (index != largest) 
+        if (index != largest)
         {
             ArrayUtils.exchangeElements(array, index, largest);  
 
