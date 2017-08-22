@@ -1,7 +1,8 @@
 package com.cn.algorithm;
 
 public class QuickSort {
-	public static void main(String[] args){
+	public static void main(String[] args)
+	{
 		int[] ns = {7,4,8,10,3,2,1,1,3,4};
 		int low = 0;
 		int high = ns.length-1;
@@ -11,7 +12,8 @@ public class QuickSort {
 		}
 	}
 	public static void quickSort(int[] ns,int low,int high){
-		if(low<high){
+		if(low<high)
+		{
 			int p = partation(ns, low, high);
 			//System.out.println(p);
 			quickSort(ns, low, p-1);
@@ -23,19 +25,23 @@ public class QuickSort {
 		int end = high;
 		int key = ns[low];
 		while(end > start ){
-			while(end > start && ns[end] >= key){
+			while(end > start && ns[end] >= key)
+			{
 				end--;
 			}
-			if(ns[end]<key){
+			if(ns[end]<key)
+			{
 				int temp = ns[start];
 				ns[start] = ns[end];
 				ns[end] = temp;
 			}
 			
-			while(end > start && ns[start] <= key){
+			while(end > start && ns[start] <= key)
+			{
 				start++;
 			}
-			if(ns[start] > key){
+			if(ns[start] > key)
+			{
 				int temp = ns[start];
 				ns[start] = ns[end];
 				ns[end] = temp;
