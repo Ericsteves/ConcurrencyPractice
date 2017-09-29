@@ -32,5 +32,6 @@ public class Test {
         statement.close();
         conn.close();
         System.err.println("数据库更改通知开启：");
+        System.out.println("For Git test");
     }
 }
