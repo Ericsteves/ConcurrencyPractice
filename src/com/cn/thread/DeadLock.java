@@ -18,16 +18,8 @@ public class DeadLock extends Thread{
 	public static void main(String[] agrs) throws InterruptedException{
 		final Object lock1 = new Object();
 		final Object lock2 = new Object();
-		Thread thread1 = new Thread(){
-			public void run(){
-				deathLock(lock1, lock2);
-			}
-		};
-		Thread thread2 = new Thread(){
-			public void run(){
-				deathLock(lock2, lock1);
-			}
-		};
+		Thread thread1 = new Thread(() -> deathLock(lock1, lock2));
+		Thread thread2 = new Thread(() -> deathLock(lock2, lock1));
 		
 		System.out.println("Starting thread!");
 		thread1.start();

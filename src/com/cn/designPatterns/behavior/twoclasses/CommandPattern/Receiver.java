@@ -1,8 +1,8 @@
 package com.cn.designPatterns.behavior.twoclasses.CommandPattern;
 
-public class Receiver {
+class Receiver {
 	
-	public void action(){
+	void action(){
 		System.out.println("Command received!");
 	}
 	

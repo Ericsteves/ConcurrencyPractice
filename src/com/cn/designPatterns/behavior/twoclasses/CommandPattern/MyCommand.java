@@ -3,7 +3,7 @@ package com.cn.designPatterns.behavior.twoclasses.CommandPattern;
 public class MyCommand implements Command{
 	private Receiver receiver;
 	
-	public MyCommand(Receiver receiver) {
+	MyCommand(Receiver receiver) {
 		this.receiver = receiver;
 	}
 	

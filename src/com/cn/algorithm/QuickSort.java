@@ -13,14 +13,14 @@ public class QuickSort {
 
   public static void quickSort(int[] ns, int low, int high) {
     if (low < high) {
-      int p = partation(ns, low, high);
+      int p = partition(ns, low, high);
       //System.out.println(p);
       quickSort(ns, low, p - 1);
       quickSort(ns, p + 1, high);
     }
   }
 
-  public static int partation(int[] ns, int low, int high) {
+  public static int partition(int[] ns, int low, int high) {
     int start = low;
     int end = high;
     int key = ns[low];

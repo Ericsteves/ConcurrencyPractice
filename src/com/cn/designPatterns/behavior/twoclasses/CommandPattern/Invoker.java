@@ -1,14 +1,14 @@
 package com.cn.designPatterns.behavior.twoclasses.CommandPattern;
 
-public class Invoker {
+class Invoker {
 	
 	private Command command;
 	
-	public Invoker(Command command){
+	Invoker(Command command){
 		this.command=command;
 	}
 	
-	public void action(){
+	void action(){
 		command.exe();
 	}
 }

@@ -45,4 +45,17 @@ public class TwoSumTest {
     throw new IllegalArgumentException("No two sum solution");
   }
 
+
+  public static int[] twoSum3(int[] data,int target){
+    Map<Integer,Integer> map = new HashMap<>();
+
+    for(int i=0;i<data.length;i++){
+      int purpose = target - data[i];
+      if(map.containsKey(purpose) && map.get(purpose)!=i){
+        return new int[]{i+1,map.get(purpose)+1};
+      }
+      map.put(data[i],i);
+    }
+    throw new IllegalArgumentException("No two sum solution");
+  }
 }

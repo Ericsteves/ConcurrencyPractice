@@ -14,18 +14,18 @@ public class MyHeapSort {
     System.out.println("}");
   }
 
-  public static void heapSort(int[] array) {
-    if (array.length < 0 || array == null) {
+  private static void heapSort(int[] array) {
+    if (array == null || array.length == 0) {
       return;
     }
     buildMaxHeap(array);
     for (int i = array.length - 1; i >= 1; i--) {
-      swarp(array, 0, i);
+      swap(array, 0, i);
       maxHeap(array, i, 0);
     }
   }
 
-  public static void buildMaxHeap(int[] array) {
+  private static void buildMaxHeap(int[] array) {
     if (array == null || array.length <= 1) {
       return;
     }
@@ -35,23 +35,58 @@ public class MyHeapSort {
     }
   }
 
-  public static void maxHeap(int[] array, int length, int index) {
-    int left = index * 2 + 1;
-    int right = index * 2 + 2;
+  /**
+   * 递归实现
+   * @param array
+   * @param heapSize
+   * @param index
+   */
+//  private static void maxHeap(int[] array, int length, int index) {
+//    int left = index * 2 + 1;
+//    int right = index * 2 + 2;
+//    int largest = index;
+//    if (left < length && array[left] > array[index]) {
+//      largest = left;
+//    }
+//    if (right < length && array[right] > array[largest]) {
+//      largest = right;
+//    }
+//    if (index != largest) {
+//      swap(array, index, largest);
+//      maxHeap(array, length, largest);
+//    }
+//  }
+
+  /**
+   * 非递归实现
+   *
+   * @param array
+   * @param heapSize
+   * @param index
+   */
+  private static void maxHeap(int[] array, int heapSize, int index) {
+    int left = 2 * index + 1;
+    int right = 2 * index + 2;
     int largest = index;
-    if (left < length && array[left] > array[index]) {
-      largest = left;
-    }
-    if (right < length && array[right] > array[largest]) {
-      largest = right;
-    }
-    if (index != largest) {
-      swarp(array, index, largest);
-      maxHeap(array, length, largest);
+    while (left < heapSize) {
+
+      if (array[left] > array[index])
+        largest = left;
+      if (right < heapSize && array[right] > array[largest])
+        largest = right;
+
+      if (largest != index)
+        swap(array, index, largest);
+      else
+        break;
+
+      index = largest;
+      left = 2 * index + 1;
+      right = 2 * index + 2;
     }
   }
 
-  public static void swarp(int[] array, int i, int j) {
+  private static void swap(int[] array, int i, int j) {
     int n = array[i];
     array[i] = array[j];
     array[j] = n;
