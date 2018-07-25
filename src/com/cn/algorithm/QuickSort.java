@@ -6,8 +6,8 @@ public class QuickSort {
     int low = 0;
     int high = ns.length - 1;
     quickSort(ns, low, high);
-    for (int i = 0; i < ns.length; i++) {
-      System.out.print(ns[i] + "\t");
+    for (int n : ns) {
+      System.out.print(n + "\t");
     }
   }
 
